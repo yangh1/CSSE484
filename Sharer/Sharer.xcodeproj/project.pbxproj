@@ -120,6 +120,8 @@
 		12893D5C1D3082870040A100 /* Sharer */ = {
 			isa = PBXGroup;
 			children = (
+				12AB1CC81D3E7B420099303E /* Data Model */,
+				12AB1CC71D3E7B030099303E /* View Controller */,
 				12893D5D1D3082870040A100 /* AppDelegate.swift */,
 				12893D661D3082870040A100 /* Main.storyboard */,
 				12893D691D3082870040A100 /* Assets.xcassets */,
@@ -127,8 +129,6 @@
 				12893D6E1D3082870040A100 /* Info.plist */,
 				12893D5F1D3082870040A100 /* Sharer.xcdatamodeld */,
 				12BBE3221D3497A700EB98D2 /* GoogleService-Info.plist */,
-				12BBE3261D34D79400EB98D2 /* LoginViewController.swift */,
-				12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */,
 			);
 			path = Sharer;
 			sourceTree = "<group>";
@@ -149,6 +149,22 @@
 				12893D841D3082870040A100 /* Info.plist */,
 			);
 			path = SharerUITests;
+			sourceTree = "<group>";
+		};
+		12AB1CC71D3E7B030099303E /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12BBE3261D34D79400EB98D2 /* LoginViewController.swift */,
+				12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		12AB1CC81D3E7B420099303E /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 		66B78D8561ACA48255D4304B /* Frameworks */ = {
