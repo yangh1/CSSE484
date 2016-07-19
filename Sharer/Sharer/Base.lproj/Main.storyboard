@@ -25,7 +25,7 @@
                                             <rect key="frame" x="15" y="2" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular">
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -35,7 +35,7 @@
                                             <rect key="frame" x="15" y="22.5" width="59" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular">
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -93,27 +93,6 @@
                                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jiI-Ms-N88" userLabel="e-mailTextField">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="DAn-xj-bC2"/>
-                                    <constraint firstAttribute="height" constant="30" id="nG3-CI-l2s"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="DAn-xj-bC2"/>
-                                        <exclude reference="nG3-CI-l2s"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="DAn-xj-bC2"/>
-                                        <include reference="nG3-CI-l2s"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzQ-dm-nf2" userLabel="passwordTextField">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <constraints>
@@ -121,7 +100,7 @@
                                     <constraint firstAttribute="height" constant="30" id="iXy-an-z0n"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="KUK-pb-1km"/>
@@ -137,20 +116,23 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vlx-LW-Vjk" userLabel="warming">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="356.5" width="600" height="20.5"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e-mail:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmL-FS-Z91">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STM-Wp-INK">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHe-bL-bim">
@@ -189,7 +171,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="login:" destination="9t4-jP-qaX" eventType="touchUpInside" id="7z5-gp-906"/>
-                                    <segue destination="vWs-kC-xTJ" kind="show" identifier="LoginSegueIdentifier" id="kn5-yP-ptN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m00-fo-vqF">
@@ -231,13 +212,34 @@
                                     <segue destination="9lt-zx-axZ" kind="show" identifier="RegisterSegueIdentifier" id="dCn-AS-VrZ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jiI-Ms-N88" userLabel="e-mailTextField">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="DAn-xj-bC2"/>
+                                    <constraint firstAttribute="height" constant="30" id="nG3-CI-l2s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DAn-xj-bC2"/>
+                                        <exclude reference="nG3-CI-l2s"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="DAn-xj-bC2"/>
+                                        <include reference="nG3-CI-l2s"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.59298038909999995" green="0.6581708168" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Uqf-bu-kWX" secondAttribute="trailing" id="0lK-Fk-0xY"/>
                             <constraint firstItem="VmL-FS-Z91" firstAttribute="leading" secondItem="A9v-bp-hk7" secondAttribute="leading" id="2Qo-GA-8Mw"/>
                             <constraint firstItem="m00-fo-vqF" firstAttribute="centerX" secondItem="A9v-bp-hk7" secondAttribute="centerX" id="33j-6f-EbI">
-                                <variation key="heightClass=regular" constant="75"/>
+                                <variation key="heightClass=regular" constant="-75"/>
                             </constraint>
                             <constraint firstItem="MHe-bL-bim" firstAttribute="centerY" secondItem="A9v-bp-hk7" secondAttribute="centerY" id="53D-mi-7KM">
                                 <variation key="heightClass=regular" constant="200"/>
@@ -253,7 +255,7 @@
                             <constraint firstItem="STM-Wp-INK" firstAttribute="leading" secondItem="A9v-bp-hk7" secondAttribute="leading" id="FKb-w1-UH4"/>
                             <constraint firstItem="fzQ-dm-nf2" firstAttribute="height" secondItem="jiI-Ms-N88" secondAttribute="height" id="Hjm-uH-ecK"/>
                             <constraint firstItem="MHe-bL-bim" firstAttribute="centerX" secondItem="A9v-bp-hk7" secondAttribute="centerX" id="LKC-bP-OvK">
-                                <variation key="heightClass=regular" constant="-75"/>
+                                <variation key="heightClass=regular" constant="75"/>
                             </constraint>
                             <constraint firstItem="fzQ-dm-nf2" firstAttribute="width" secondItem="jiI-Ms-N88" secondAttribute="width" id="Mcn-gk-O2W"/>
                             <constraint firstItem="Uqf-bu-kWX" firstAttribute="centerY" secondItem="A9v-bp-hk7" secondAttribute="centerY" id="NJc-Xp-3Tc">
@@ -283,13 +285,13 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Uqf-bu-kWX"/>
-                                <exclude reference="jiI-Ms-N88"/>
                                 <exclude reference="fzQ-dm-nf2"/>
                                 <exclude reference="Vlx-LW-Vjk"/>
                                 <exclude reference="VmL-FS-Z91"/>
                                 <exclude reference="STM-Wp-INK"/>
                                 <exclude reference="MHe-bL-bim"/>
                                 <exclude reference="m00-fo-vqF"/>
+                                <exclude reference="jiI-Ms-N88"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="A1i-cc-dcW"/>
@@ -320,13 +322,13 @@
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="Uqf-bu-kWX"/>
-                                <include reference="jiI-Ms-N88"/>
                                 <include reference="fzQ-dm-nf2"/>
                                 <include reference="Vlx-LW-Vjk"/>
                                 <include reference="VmL-FS-Z91"/>
                                 <include reference="STM-Wp-INK"/>
                                 <include reference="MHe-bL-bim"/>
                                 <include reference="m00-fo-vqF"/>
+                                <include reference="jiI-Ms-N88"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="A1i-cc-dcW"/>
@@ -359,6 +361,7 @@
                         <outlet property="emailTextField" destination="jiI-Ms-N88" id="QdN-gT-VC0"/>
                         <outlet property="passwordTextField" destination="fzQ-dm-nf2" id="KTh-i5-JEQ"/>
                         <outlet property="warmingLabel" destination="Vlx-LW-Vjk" id="bBY-dO-Qqa"/>
+                        <segue destination="vWs-kC-xTJ" kind="presentation" identifier="LoginSegueIdentifier" id="Nuo-ya-gp7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfg-H8-BLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -380,7 +383,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Own Sharer Account!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDi-RL-fug">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELY-Fi-xOp" userLabel="emailTextField">
@@ -392,7 +395,7 @@
                                     <constraint firstAttribute="height" constant="30" id="mIa-my-OcB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="gV2-IH-m5v"/>
@@ -415,7 +418,7 @@
                                     <constraint firstAttribute="height" constant="30" id="IuB-jl-agK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="7GU-Gh-yF9"/>
@@ -429,29 +432,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dkv-7W-R6l" userLabel="passwordTextField">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="05K-n9-BMz"/>
-                                    <constraint firstAttribute="width" constant="150" id="qrR-Ga-TfD">
-                                        <variation key="heightClass=regular" constant="200"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="05K-n9-BMz"/>
-                                        <exclude reference="qrR-Ga-TfD"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="05K-n9-BMz"/>
-                                        <exclude reference="qrR-Ga-TfD"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z2s-4D-eSy" userLabel="repasswordTextField">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <constraints>
@@ -461,7 +441,7 @@
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="93c-BF-mI3"/>
@@ -474,32 +454,29 @@
                                         <exclude reference="KJQ-p5-TuL"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="register:" destination="9lt-zx-axZ" eventType="editingDidEnd" id="W4W-8K-jCm"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usj-1V-niZ">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-P2-afw">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvF-B8-Am7">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e-mail:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyE-Mu-zKL">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcB-aE-4il">
@@ -523,7 +500,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="vWs-kC-xTJ" kind="show" identifier="accountCreateSegueIdentifier" id="B0R-2M-z1u"/>
+                                    <action selector="register:" destination="9lt-zx-axZ" eventType="touchUpInside" id="DXo-qr-Gxz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIR-lT-C3L">
@@ -557,6 +534,29 @@
                                     <segue destination="9t4-jP-qaX" kind="show" identifier="BackSegueIdentifier" id="Uaz-hw-rqT"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dkv-7W-R6l" userLabel="passwordTextField">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="05K-n9-BMz"/>
+                                    <constraint firstAttribute="width" constant="150" id="qrR-Ga-TfD">
+                                        <variation key="heightClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="05K-n9-BMz"/>
+                                        <exclude reference="qrR-Ga-TfD"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="05K-n9-BMz"/>
+                                        <exclude reference="qrR-Ga-TfD"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.59298038909999995" green="0.6581708168" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -620,7 +620,6 @@
                                 <exclude reference="bDi-RL-fug"/>
                                 <exclude reference="ELY-Fi-xOp"/>
                                 <exclude reference="5yv-nn-f4T"/>
-                                <exclude reference="Dkv-7W-R6l"/>
                                 <exclude reference="z2s-4D-eSy"/>
                                 <exclude reference="usj-1V-niZ"/>
                                 <exclude reference="KBd-P2-afw"/>
@@ -629,6 +628,7 @@
                                 <exclude reference="xcB-aE-4il"/>
                                 <exclude reference="EIR-lT-C3L"/>
                                 <exclude reference="c2s-w2-dOf"/>
+                                <exclude reference="Dkv-7W-R6l"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="bmx-xK-yvC"/>
@@ -672,7 +672,6 @@
                                 <include reference="bDi-RL-fug"/>
                                 <include reference="ELY-Fi-xOp"/>
                                 <include reference="5yv-nn-f4T"/>
-                                <include reference="Dkv-7W-R6l"/>
                                 <include reference="z2s-4D-eSy"/>
                                 <include reference="usj-1V-niZ"/>
                                 <include reference="KBd-P2-afw"/>
@@ -681,6 +680,7 @@
                                 <include reference="xcB-aE-4il"/>
                                 <include reference="EIR-lT-C3L"/>
                                 <include reference="c2s-w2-dOf"/>
+                                <include reference="Dkv-7W-R6l"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="bmx-xK-yvC"/>
@@ -726,6 +726,7 @@
                         <outlet property="repasswordTextField" destination="z2s-4D-eSy" id="1WO-Fu-bTb"/>
                         <outlet property="usernameTextField" destination="5yv-nn-f4T" id="VN9-Fx-iaf"/>
                         <outlet property="warmingLabel" destination="EIR-lT-C3L" id="YZC-wc-mtI"/>
+                        <segue destination="vWs-kC-xTJ" kind="presentation" identifier="AccountCreateSegueIdentifier" id="cOO-uB-wwa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ck-lU-OJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -734,6 +735,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B0R-2M-z1u"/>
+        <segue reference="Nuo-ya-gp7"/>
     </inferredMetricsTieBreakers>
 </document>

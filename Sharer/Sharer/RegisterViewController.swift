@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var warmingLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -19,11 +19,53 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repasswordTextField: UITextField!
     
+    var move = false;
+    var touchHeight = CGFloat(0);
+    
+    let kAccountCreateSegueIdentifier = "AccountCreateSegueIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+        self.emailTextField.delegate = self
+        self.usernameTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.repasswordTextField.delegate = self
         warmingLabel.text = ""
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        
+        self.passwordTextField.addTarget(self, action: "doesMove:", forControlEvents: UIControlEvents.TouchDown)
+        self.repasswordTextField.addTarget(self, action: "doesMove:", forControlEvents: UIControlEvents.TouchDown)
+    }
+    
+    func doesMove(textField: UITextField) {
+        self.move = true;
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        if (self.move) {
+            self.view.frame.origin.y = -150
+        }
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0
+        self.move = false;
     }
 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,8 +85,28 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        FIRAuth.auth()
+        let container: UIView = UIView()
+        container.frame = self.view.frame
+        container.center = self.view.center
+        container.backgroundColor = UIColor(white: 0xffffff, alpha: 0.3)
         
+        self.view.addSubview(container)
+        
+        let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        myActivityIndicator.center = view.center
+        myActivityIndicator.startAnimating()
+        container.addSubview(myActivityIndicator)
+        
+        FIRAuth.auth()?.createUserWithEmail(email!, password: password!) { (user, error) in
+            if ((error) != nil) {
+                myActivityIndicator.removeFromSuperview()
+                container.removeFromSuperview()
+                self.warmingLabel.text = error?.localizedDescription
+                print(error?.description)
+            } else {
+                self.performSegueWithIdentifier(self.kAccountCreateSegueIdentifier, sender: nil);
+            }
+        }
     }
 
     /*
