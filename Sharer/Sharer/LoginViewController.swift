@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let kLoginSegueIdentifier = "LoginSegueIdentifier"
     let kRegisterSegueIdentifier = "RegisterSegueIdentifier"
+    var userInfo : FIRUser? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(sender: AnyObject) {
+        self.view.frame.origin.y = 0
+        view.endEditing(true)
         let email = emailTextField.text
         let password = passwordTextField.text
         
@@ -68,7 +71,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 container.removeFromSuperview()
                 self.warmingLabel.text = error?.localizedDescription;
             } else {
-                self.performSegueWithIdentifier(self.kLoginSegueIdentifier, sender: nil);
+                self.userInfo = user
+                self.performSegueWithIdentifier(self.kLoginSegueIdentifier, sender: nil)
             }
         }
     }
@@ -88,14 +92,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == kLoginSegueIdentifier {
+            let navigation = segue.destinationViewController as! UINavigationController
+            let controller = navigation.topViewController as! PostsViewController
+            controller.userInfo = self.userInfo
+        }
 
+    }
+    
 }

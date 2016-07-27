@@ -15,9 +15,12 @@
 		12893D6D1D3082870040A100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12893D6B1D3082870040A100 /* LaunchScreen.storyboard */; };
 		12893D781D3082870040A100 /* SharerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12893D771D3082870040A100 /* SharerTests.swift */; };
 		12893D831D3082870040A100 /* SharerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12893D821D3082870040A100 /* SharerUITests.swift */; };
-		12BBE3231D3497A700EB98D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12BBE3221D3497A700EB98D2 /* GoogleService-Info.plist */; };
+		12AB1CCA1D3F3CD50099303E /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB1CC91D3F3CD50099303E /* FriendsTableViewController.swift */; };
+		12AB1CCE1D3F40A40099303E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AB1CCD1D3F40A40099303E /* User.m */; };
 		12BBE3271D34D79400EB98D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBE3261D34D79400EB98D2 /* LoginViewController.swift */; };
 		12BBE3291D34DBE800EB98D2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */; };
+		12E00D991D478C3200AFFDD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12E00D981D478C3200AFFDD6 /* GoogleService-Info.plist */; };
+		12E00D9B1D47DA8100AFFDD6 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */; };
 		2C2BB38138B26FEB1B2E250B /* Pods_Sharer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F526584A042E4374BD4FAE /* Pods_Sharer.framework */; };
 		DF2943150DD51F29750A7F3D /* Pods_SharerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA34458512A32BCBF324591 /* Pods_SharerTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,9 +56,14 @@
 		12893D7E1D3082870040A100 /* SharerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12893D821D3082870040A100 /* SharerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharerUITests.swift; sourceTree = "<group>"; };
 		12893D841D3082870040A100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		12BBE3221D3497A700EB98D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		12AB1CC91D3F3CD50099303E /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		12AB1CCB1D3F40A40099303E /* Sharer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sharer-Bridging-Header.h"; sourceTree = "<group>"; };
+		12AB1CCC1D3F40A40099303E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		12AB1CCD1D3F40A40099303E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		12BBE3261D34D79400EB98D2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		12E00D981D478C3200AFFDD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		1AF1E99C64030D882206CC23 /* Pods-SharerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharerUITests/Pods-SharerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		676D42E91D223A4959A772E4 /* Pods-Sharer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sharer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sharer/Pods-Sharer.release.xcconfig"; sourceTree = "<group>"; };
 		69499A629ADB3657AF220821 /* Pods-SharerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharerTests/Pods-SharerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +136,7 @@
 				12893D6B1D3082870040A100 /* LaunchScreen.storyboard */,
 				12893D6E1D3082870040A100 /* Info.plist */,
 				12893D5F1D3082870040A100 /* Sharer.xcdatamodeld */,
-				12BBE3221D3497A700EB98D2 /* GoogleService-Info.plist */,
+				12E00D981D478C3200AFFDD6 /* GoogleService-Info.plist */,
 			);
 			path = Sharer;
 			sourceTree = "<group>";
@@ -154,8 +162,10 @@
 		12AB1CC71D3E7B030099303E /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				12AB1CC91D3F3CD50099303E /* FriendsTableViewController.swift */,
 				12BBE3261D34D79400EB98D2 /* LoginViewController.swift */,
 				12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */,
+				12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -163,6 +173,9 @@
 		12AB1CC81D3E7B420099303E /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				12AB1CCC1D3F40A40099303E /* User.h */,
+				12AB1CCD1D3F40A40099303E /* User.m */,
+				12AB1CCB1D3F40A40099303E /* Sharer-Bridging-Header.h */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -306,7 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12893D6D1D3082870040A100 /* LaunchScreen.storyboard in Resources */,
-				12BBE3231D3497A700EB98D2 /* GoogleService-Info.plist in Resources */,
+				12E00D991D478C3200AFFDD6 /* GoogleService-Info.plist in Resources */,
 				12893D6A1D3082870040A100 /* Assets.xcassets in Resources */,
 				12893D681D3082870040A100 /* Main.storyboard in Resources */,
 			);
@@ -456,10 +469,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E00D9B1D47DA8100AFFDD6 /* PostsViewController.swift in Sources */,
 				12BBE3271D34D79400EB98D2 /* LoginViewController.swift in Sources */,
 				12893D611D3082870040A100 /* Sharer.xcdatamodeld in Sources */,
+				12AB1CCE1D3F40A40099303E /* User.m in Sources */,
 				12893D5E1D3082870040A100 /* AppDelegate.swift in Sources */,
 				12BBE3291D34DBE800EB98D2 /* RegisterViewController.swift in Sources */,
+				12AB1CCA1D3F3CD50099303E /* FriendsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,10 +618,13 @@
 			baseConfigurationReference = A8A8DCDA61CD8CA0D085B808 /* Pods-Sharer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Sharer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.Sharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sharer/Sharer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -615,10 +634,12 @@
 			baseConfigurationReference = 676D42E91D223A4959A772E4 /* Pods-Sharer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Sharer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.Sharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sharer/Sharer-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

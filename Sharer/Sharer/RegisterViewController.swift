@@ -8,8 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
-
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
@@ -21,6 +19,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     var move = false;
     var touchHeight = CGFloat(0);
+    var userInfo: FIRUser?
     
     let kAccountCreateSegueIdentifier = "AccountCreateSegueIdentifier"
     
@@ -75,6 +74,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func register(sender: AnyObject) {
+        self.view.frame.origin.y = 0
+        view.endEditing(true)
         let email = emailTextField.text
         let username = usernameTextField.text
         let password = passwordTextField.text
@@ -104,19 +105,27 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 self.warmingLabel.text = error?.localizedDescription
                 print(error?.description)
             } else {
+                self.userInfo = user
+                let newUser = User(userInfo: user, username: username);
+                newUser.registerUserInfo();
                 self.performSegueWithIdentifier(self.kAccountCreateSegueIdentifier, sender: nil);
             }
         }
     }
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == kAccountCreateSegueIdentifier {
+            let navigation = segue.destinationViewController as! UINavigationController
+            let controller = navigation.topViewController as! PostsViewController
+            controller.userInfo = self.userInfo
+        }
     }
-    */
+
 
 }
