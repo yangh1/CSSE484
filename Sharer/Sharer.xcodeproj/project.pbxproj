@@ -19,6 +19,7 @@
 		12AB1CCE1D3F40A40099303E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AB1CCD1D3F40A40099303E /* User.m */; };
 		12BBE3271D34D79400EB98D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBE3261D34D79400EB98D2 /* LoginViewController.swift */; };
 		12BBE3291D34DBE800EB98D2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */; };
+		12D3F2261D4903BC0066F4BE /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3F2251D4903BC0066F4BE /* PostViewController.swift */; };
 		12E00D991D478C3200AFFDD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12E00D981D478C3200AFFDD6 /* GoogleService-Info.plist */; };
 		12E00D9B1D47DA8100AFFDD6 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */; };
 		2C2BB38138B26FEB1B2E250B /* Pods_Sharer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F526584A042E4374BD4FAE /* Pods_Sharer.framework */; };
@@ -62,6 +63,7 @@
 		12AB1CCD1D3F40A40099303E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		12BBE3261D34D79400EB98D2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		12D3F2251D4903BC0066F4BE /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		12E00D981D478C3200AFFDD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		1AF1E99C64030D882206CC23 /* Pods-SharerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharerUITests/Pods-SharerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				12BBE3261D34D79400EB98D2 /* LoginViewController.swift */,
 				12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */,
 				12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */,
+				12D3F2251D4903BC0066F4BE /* PostViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D3F2261D4903BC0066F4BE /* PostViewController.swift in Sources */,
 				12E00D9B1D47DA8100AFFDD6 /* PostsViewController.swift in Sources */,
 				12BBE3271D34D79400EB98D2 /* LoginViewController.swift in Sources */,
 				12893D611D3082870040A100 /* Sharer.xcdatamodeld in Sources */,
