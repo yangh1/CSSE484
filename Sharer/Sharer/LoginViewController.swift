@@ -25,8 +25,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
-        self.emailTextField.delegate = self;
-        self.passwordTextField.delegate = self;
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
         warmingLabel.text = ""
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)

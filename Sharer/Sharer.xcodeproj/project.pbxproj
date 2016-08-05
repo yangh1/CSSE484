@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0196890CF92F6C59BA3EB8B1 /* Pods_SharerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AF4C5B42741DB48E8823E2 /* Pods_SharerUITests.framework */; };
+		121129BE1D50D3F60082A455 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 121129BD1D50D3F60082A455 /* Post.m */; };
+		121129C01D51E7EE0082A455 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121129BF1D51E7EE0082A455 /* PostTableViewCell.swift */; };
 		12893D5E1D3082870040A100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12893D5D1D3082870040A100 /* AppDelegate.swift */; };
 		12893D611D3082870040A100 /* Sharer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12893D5F1D3082870040A100 /* Sharer.xcdatamodeld */; };
 		12893D681D3082870040A100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12893D661D3082870040A100 /* Main.storyboard */; };
@@ -44,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121129BC1D50D3F60082A455 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		121129BD1D50D3F60082A455 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		121129BF1D51E7EE0082A455 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		12893D5A1D3082870040A100 /* Sharer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sharer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12893D5D1D3082870040A100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12893D601D3082870040A100 /* Sharer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sharer.xcdatamodel; sourceTree = "<group>"; };
@@ -169,6 +174,7 @@
 				12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */,
 				12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */,
 				12D3F2251D4903BC0066F4BE /* PostViewController.swift */,
+				121129BF1D51E7EE0082A455 /* PostTableViewCell.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 				12AB1CCC1D3F40A40099303E /* User.h */,
 				12AB1CCD1D3F40A40099303E /* User.m */,
 				12AB1CCB1D3F40A40099303E /* Sharer-Bridging-Header.h */,
+				121129BC1D50D3F60082A455 /* Post.h */,
+				121129BD1D50D3F60082A455 /* Post.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -476,8 +484,10 @@
 				12E00D9B1D47DA8100AFFDD6 /* PostsViewController.swift in Sources */,
 				12BBE3271D34D79400EB98D2 /* LoginViewController.swift in Sources */,
 				12893D611D3082870040A100 /* Sharer.xcdatamodeld in Sources */,
+				121129BE1D50D3F60082A455 /* Post.m in Sources */,
 				12AB1CCE1D3F40A40099303E /* User.m in Sources */,
 				12893D5E1D3082870040A100 /* AppDelegate.swift in Sources */,
+				121129C01D51E7EE0082A455 /* PostTableViewCell.swift in Sources */,
 				12BBE3291D34DBE800EB98D2 /* RegisterViewController.swift in Sources */,
 				12AB1CCA1D3F3CD50099303E /* FriendsTableViewController.swift in Sources */,
 			);

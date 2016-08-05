@@ -25,6 +25,7 @@
             Username: (NSString*) username
                  Key: (NSString*) key;
 - (id) initWithUserInfo:(FIRUser *)userInfo;
+- (id) initWithSnapshot: (FIRDataSnapshot*) snapshot;
 - (void) registerUserInfo;
 - (BOOL) addFriend: (NSString*) email;
 @end

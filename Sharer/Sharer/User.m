@@ -39,6 +39,15 @@
     return self;
 }
 
+- (id) initWithSnapshot: (FIRDataSnapshot*) snapshot{
+    self = [self init];
+    self.key = snapshot.key;
+    self.email = snapshot.value[@"email"];
+    self.username = snapshot.value[@"username"];
+    self.ref = [[FIRDatabase database] reference];
+    return self;
+}
+
 - (id) initWithUserInfo:(FIRUser *)userInfo {
     self = [self init];
     self.userInfo = userInfo;

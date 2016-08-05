@@ -10,6 +10,7 @@ target 'Sharer' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod "BSImagePicker", "~> 2.3"
 
   target 'SharerTests' do
     inherit! :search_paths

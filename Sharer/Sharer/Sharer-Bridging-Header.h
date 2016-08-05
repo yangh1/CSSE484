@@ -3,3 +3,4 @@
 //
 
 #import "User.h"
+#import "Post.h"
