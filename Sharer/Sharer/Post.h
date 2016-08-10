@@ -19,11 +19,14 @@
 @property (nonatomic) NSDictionary* images;
 
 - (id) initWithAuthor: (NSString*) author
+             Username: (NSString*) username
              PostText: (NSString*) postText
              Location: (NSString*) location;
 
 - (id) initWithSnapshot: (FIRDataSnapshot*) snapshot;
 
 - (FIRDataSnapshot*) getSnapshotValueWithoutImages;
+
+- (NSArray*) getImagesUrl;
 
 @end

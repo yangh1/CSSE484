@@ -27,14 +27,18 @@ class PostViewController: UIViewController, UITextFieldDelegate, CLLocationManag
     var isUseCurrentLocation = false
     var address: String!
     var postRef: FIRDatabaseReference!
-    var email: String!
+    var user: User!
     var post: Post!
     
-    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+//        FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!).observeEventType(FIRDataEventType.Value) { (snapshot:FIRDataSnapshot) in
+//            print(snapshot)
+//            self.user = User(snapshot: snapshot)
+//        }
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PostViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
 
@@ -42,11 +46,11 @@ class PostViewController: UIViewController, UITextFieldDelegate, CLLocationManag
         self.addressTextField2.delegate = self
         self.cityTextField.delegate = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
-        self.addressTextField2.addTarget(self, action: "doesMove:", forControlEvents: UIControlEvents.TouchDown)
-        self.cityTextField.addTarget(self, action: "doesMove:", forControlEvents: UIControlEvents.TouchDown)
+        self.addressTextField2.addTarget(self, action: #selector(PostViewController.doesMove(_:)), forControlEvents: UIControlEvents.TouchDown)
+        self.cityTextField.addTarget(self, action: #selector(PostViewController.doesMove(_:)), forControlEvents: UIControlEvents.TouchDown)
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -169,7 +173,6 @@ class PostViewController: UIViewController, UITextFieldDelegate, CLLocationManag
                         self.address.append(c)
                     } else {
                         self.address.append(Character(","))
-                        self.address.append(Character(" "))
                     }
                 }
 
@@ -193,13 +196,13 @@ class PostViewController: UIViewController, UITextFieldDelegate, CLLocationManag
     @IBAction func pressedPost(sender: AnyObject) {
         if !self.isUseCurrentLocation {
             if self.addressTextField2.text == "" {
-                self.address = "\(self.addressTextField1.text!), \(self.cityTextField!.text!)"
+                self.address = "\(self.addressTextField1.text!),\(self.cityTextField!.text!)"
             } else {
-                self.address = "\(self.addressTextField1.text!), \(self.addressTextField2.text!), \(self.cityTextField.text!)"
+                self.address = "\(self.addressTextField1.text!),\(self.addressTextField2.text!),\(self.cityTextField.text!)"
             }
         }
         
-        self.post = Post(author: self.email, postText: self.textField.text, location: self.address)
+        self.post = Post(author: self.user.email,username: self.user.username, postText: self.textField.text, location: self.address)
         self.post.key = self.postRef.childByAutoId().key
         self.postRef.child(self.post.key).setValue(self.post.getSnapshotValueWithoutImages())
         uploadImage()
@@ -228,7 +231,7 @@ class PostViewController: UIViewController, UITextFieldDelegate, CLLocationManag
                 })
                 print(count)
             }
-            count++
+            count += 1
         }
         
     }

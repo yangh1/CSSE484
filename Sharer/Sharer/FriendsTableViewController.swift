@@ -11,7 +11,7 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
     
     let friendsToPost = "FriendsToPost"
-    
+    let friendsToSaves = "FriendsToSaves"
     var user: User? = nil
     var userInfo: FIRUser? = nil
     var friendsList: NSMutableArray = []
@@ -27,13 +27,17 @@ class FriendsTableViewController: UITableViewController {
 //
 //        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 //        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+////        FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!).observeEventType(FIRDataEventType.Value, withBlock: { (snapshot: FIRDataSnapshot) -> Void in
+////            let user = User(snapshot: snapshot)
+////            self.user = user
+////        })
 //    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationItem.setHidesBackButton(true, animated:true);
-        self.friendsRef = FIRDatabase.database().reference().child("users").child((self.userInfo?.uid)!).child("friends")
+        self.friendsRef = FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!).child("friends")
         self.userInfoRef = FIRDatabase.database().reference().child("usersInfo")
         friendsRefHandle = self.friendsRef!.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
             
@@ -57,6 +61,9 @@ class FriendsTableViewController: UITableViewController {
             
             self.tableView.reloadData()
         })
+        
+        
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -152,6 +159,9 @@ class FriendsTableViewController: UITableViewController {
         })
     }
     
+    @IBAction func pressedLogout(sender: AnyObject) {
+        appDelegate.handleLogout()
+    }
     // MARK: - Table view data source
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -178,7 +188,8 @@ class FriendsTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        
+        return (self.friendsList[indexPath.row].email != self.user!.email)
     }
 
 
@@ -219,7 +230,11 @@ class FriendsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == friendsToPost {
             let controller = segue.destinationViewController as! PostsViewController
-            controller.userInfo = self.userInfo
+            controller.user = self.user
+        }
+        if segue.identifier == friendsToSaves {
+            let controller = segue.destinationViewController as! SavesViewController
+            controller.user = self.user
         }
     }
     

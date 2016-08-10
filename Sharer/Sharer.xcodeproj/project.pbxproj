@@ -10,6 +10,9 @@
 		0196890CF92F6C59BA3EB8B1 /* Pods_SharerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AF4C5B42741DB48E8823E2 /* Pods_SharerUITests.framework */; };
 		121129BE1D50D3F60082A455 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 121129BD1D50D3F60082A455 /* Post.m */; };
 		121129C01D51E7EE0082A455 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121129BF1D51E7EE0082A455 /* PostTableViewCell.swift */; };
+		12144D641D59B442003959A8 /* SavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12144D631D59B442003959A8 /* SavesViewController.swift */; };
+		12144D661D59CF80003959A8 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12144D651D59CF80003959A8 /* PostDetailViewController.swift */; };
+		12144D691D5A0741003959A8 /* Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 12144D681D5A0741003959A8 /* Save.m */; };
 		12893D5E1D3082870040A100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12893D5D1D3082870040A100 /* AppDelegate.swift */; };
 		12893D611D3082870040A100 /* Sharer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12893D5F1D3082870040A100 /* Sharer.xcdatamodeld */; };
 		12893D681D3082870040A100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12893D661D3082870040A100 /* Main.storyboard */; };
@@ -17,10 +20,9 @@
 		12893D6D1D3082870040A100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12893D6B1D3082870040A100 /* LaunchScreen.storyboard */; };
 		12893D781D3082870040A100 /* SharerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12893D771D3082870040A100 /* SharerTests.swift */; };
 		12893D831D3082870040A100 /* SharerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12893D821D3082870040A100 /* SharerUITests.swift */; };
+		12AAAD551D58E0F50023AE4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AAAD541D58E0F50023AE4B /* LoginViewController.swift */; };
 		12AB1CCA1D3F3CD50099303E /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB1CC91D3F3CD50099303E /* FriendsTableViewController.swift */; };
 		12AB1CCE1D3F40A40099303E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AB1CCD1D3F40A40099303E /* User.m */; };
-		12BBE3271D34D79400EB98D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBE3261D34D79400EB98D2 /* LoginViewController.swift */; };
-		12BBE3291D34DBE800EB98D2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */; };
 		12D3F2261D4903BC0066F4BE /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3F2251D4903BC0066F4BE /* PostViewController.swift */; };
 		12E00D991D478C3200AFFDD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12E00D981D478C3200AFFDD6 /* GoogleService-Info.plist */; };
 		12E00D9B1D47DA8100AFFDD6 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */; };
@@ -49,6 +51,10 @@
 		121129BC1D50D3F60082A455 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		121129BD1D50D3F60082A455 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		121129BF1D51E7EE0082A455 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		12144D631D59B442003959A8 /* SavesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavesViewController.swift; sourceTree = "<group>"; };
+		12144D651D59CF80003959A8 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		12144D671D5A0741003959A8 /* Save.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Save.h; sourceTree = "<group>"; };
+		12144D681D5A0741003959A8 /* Save.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Save.m; sourceTree = "<group>"; };
 		12893D5A1D3082870040A100 /* Sharer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sharer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12893D5D1D3082870040A100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12893D601D3082870040A100 /* Sharer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sharer.xcdatamodel; sourceTree = "<group>"; };
@@ -62,12 +68,11 @@
 		12893D7E1D3082870040A100 /* SharerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12893D821D3082870040A100 /* SharerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharerUITests.swift; sourceTree = "<group>"; };
 		12893D841D3082870040A100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12AAAD541D58E0F50023AE4B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		12AB1CC91D3F3CD50099303E /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		12AB1CCB1D3F40A40099303E /* Sharer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sharer-Bridging-Header.h"; sourceTree = "<group>"; };
 		12AB1CCC1D3F40A40099303E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		12AB1CCD1D3F40A40099303E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		12BBE3261D34D79400EB98D2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		12D3F2251D4903BC0066F4BE /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		12E00D981D478C3200AFFDD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -170,11 +175,12 @@
 			isa = PBXGroup;
 			children = (
 				12AB1CC91D3F3CD50099303E /* FriendsTableViewController.swift */,
-				12BBE3261D34D79400EB98D2 /* LoginViewController.swift */,
-				12BBE3281D34DBE800EB98D2 /* RegisterViewController.swift */,
 				12E00D9A1D47DA8100AFFDD6 /* PostsViewController.swift */,
 				12D3F2251D4903BC0066F4BE /* PostViewController.swift */,
 				121129BF1D51E7EE0082A455 /* PostTableViewCell.swift */,
+				12AAAD541D58E0F50023AE4B /* LoginViewController.swift */,
+				12144D631D59B442003959A8 /* SavesViewController.swift */,
+				12144D651D59CF80003959A8 /* PostDetailViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -187,6 +193,8 @@
 				12AB1CCB1D3F40A40099303E /* Sharer-Bridging-Header.h */,
 				121129BC1D50D3F60082A455 /* Post.h */,
 				121129BD1D50D3F60082A455 /* Post.m */,
+				12144D671D5A0741003959A8 /* Save.h */,
+				12144D681D5A0741003959A8 /* Save.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -480,16 +488,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12144D691D5A0741003959A8 /* Save.m in Sources */,
 				12D3F2261D4903BC0066F4BE /* PostViewController.swift in Sources */,
+				12144D661D59CF80003959A8 /* PostDetailViewController.swift in Sources */,
 				12E00D9B1D47DA8100AFFDD6 /* PostsViewController.swift in Sources */,
-				12BBE3271D34D79400EB98D2 /* LoginViewController.swift in Sources */,
 				12893D611D3082870040A100 /* Sharer.xcdatamodeld in Sources */,
 				121129BE1D50D3F60082A455 /* Post.m in Sources */,
+				12144D641D59B442003959A8 /* SavesViewController.swift in Sources */,
 				12AB1CCE1D3F40A40099303E /* User.m in Sources */,
 				12893D5E1D3082870040A100 /* AppDelegate.swift in Sources */,
 				121129C01D51E7EE0082A455 /* PostTableViewCell.swift in Sources */,
-				12BBE3291D34DBE800EB98D2 /* RegisterViewController.swift in Sources */,
 				12AB1CCA1D3F3CD50099303E /* FriendsTableViewController.swift in Sources */,
+				12AAAD551D58E0F50023AE4B /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -619,7 +629,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -634,6 +644,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Sharer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.Sharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -650,6 +661,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Sharer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.Sharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

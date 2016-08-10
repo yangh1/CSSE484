@@ -32,6 +32,12 @@ PODS:
   - FirebaseStorage (1.0.2):
     - FirebaseAnalytics (~> 3.2)
     - GoogleNetworkingUtilities (~> 1.2)
+  - FoldingCell (0.7.3)
+  - GoogleAppUtilities (1.1.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleAuthUtilities (2.0.1):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
   - GoogleInterchangeUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleNetworkingUtilities (1.2.1):
@@ -39,9 +45,16 @@ PODS:
   - GoogleParsingUtilities (1.1.1):
     - GoogleNetworkingUtilities (~> 1.0)
     - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSignIn (4.0.0):
+    - GoogleAppUtilities (~> 1.1)
+    - GoogleAuthUtilities (~> 2.0)
+    - GoogleNetworkingUtilities (~> 1.2)
+    - GoogleUtilities (~> 1.3)
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
+  - Material (1.42.7)
+  - Rosefire (2.1.0)
   - UIImageViewModeScaleAspect (1.5)
 
 DEPENDENCIES:
@@ -50,6 +63,20 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - FoldingCell (~> 0.7.2)
+  - GoogleSignIn
+  - Material (~> 1.42.7)
+  - Rosefire (from `https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git`, tag `2.1.0`)
+
+EXTERNAL SOURCES:
+  Rosefire:
+    :git: https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git
+    :tag: 2.1.0
+
+CHECKOUT OPTIONS:
+  Rosefire:
+    :git: https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git
+    :tag: 2.1.0
 
 SPEC CHECKSUMS:
   BSGridCollectionViewLayout: d7304dcb35c6b3b4420c527e9f9b77ff322250f3
@@ -60,13 +87,19 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
   FirebaseInstanceID: a9d923f3d0b6fbf9fac89310860357aaadc34be5
   FirebaseStorage: fa2a87dee81f682f553af6839daa37a750e65f6a
+  FoldingCell: 8d7674d9ff51ae40408b99a17798bc0ec20a3654
+  GoogleAppUtilities: f1730f91f67767b453c289577040dd3f425ffdc7
+  GoogleAuthUtilities: d7a19615cd7627688afcf181737f1011ee8b5a23
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleParsingUtilities: 30b3896f9ee167dc78747f013d3de157ced1cadf
+  GoogleSignIn: 09036ed61f8e75f1424100d63f7719480b2428c3
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  Material: 2d46a44719b1f19e52956518af8aea54ac714963
+  Rosefire: 6e0c0f97fe55dcdb52928d833a79dcc4d59d9412
   UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
 
-PODFILE CHECKSUM: 5444bd0a8142f21e7f012a0a0362b4bbd179bc3a
+PODFILE CHECKSUM: 5e2d441b380650fff1e2f7673b065c6869ff01c1
 
 COCOAPODS: 1.0.1

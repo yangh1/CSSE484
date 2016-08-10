@@ -11,7 +11,11 @@ target 'Sharer' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod "BSImagePicker", "~> 2.3"
+  pod 'Material', '~> 1.42.7’
+  pod 'FoldingCell', '~> 0.7.2'
+  pod 'Rosefire', :git => 'https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git', :tag => '2.1.0'
 
+  pod 'GoogleSignIn'
   target 'SharerTests' do
     inherit! :search_paths
     # Pods for testing

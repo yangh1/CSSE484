@@ -8,16 +8,21 @@
 
 import UIKit
 import Firebase
+import Material
 
 class PostsViewController: UITableViewController {
     
+    @IBOutlet weak var SavesButton: UIBarButtonItem!
+    @IBOutlet weak var friendButton: UIBarButtonItem!
+    @IBOutlet weak var postButton: UIBarButtonItem!
     let postToFriends = "PostToFriends"
     let postIdentifier = "PostIdentifier"
-    
+    let showPostDetail = "ShowPostDetail"
+    let postsToSaves = "PostsToSaves"
     var userRef: FIRDatabaseReference!
     var postsRef: FIRDatabaseReference!
     var user: User? = nil
-    var userInfo: FIRUser? = nil
+    var userInfo : User?
     var friends = [User]()
     var posts = [Post]()
     
@@ -25,16 +30,24 @@ class PostsViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated:true);
         
-        self.userRef = FIRDatabase.database().reference().child("users").child((self.userInfo?.uid)!)
+        self.SavesButton.enabled = false
+        self.friendButton.enabled = false
+        self.postButton.enabled = false
+        
+        self.userRef = FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!)
         self.postsRef = FIRDatabase.database().reference().child("posts")
-        self.tableView.rowHeight = 80
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.rowHeight = 150
         
         
+        self.userRef.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot: FIRDataSnapshot) -> Void in
+            let user = User(snapshot: snapshot)
+            self.user = user
+            self.title = user.username
+            
+            self.SavesButton.enabled = true
+            self.friendButton.enabled = true
+            self.postButton.enabled = true
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,10 +55,7 @@ class PostsViewController: UITableViewController {
         
         self.posts.removeAll()
         self.friends.removeAll()
-        
-        self.userRef.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot: FIRDataSnapshot) -> Void in
-            self.navigationItem.title = User(snapshot: snapshot).username
-        })
+        self.tableView.reloadData()
         
         self.searchFriend { () -> Void in
             self.postsRef.observeEventType(FIRDataEventType.ChildAdded) { (snapshot: FIRDataSnapshot) -> Void in
@@ -54,10 +64,11 @@ class PostsViewController: UITableViewController {
                 }
                 let post = Post(snapshot: snapshot)
                 if let friend = self.checkEmail(post.author) {
-                    post.username = friend.username
+//                    post.username = friend.username
                     self.posts.insert(post, atIndex: 0)
+                    let newIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+                    self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
                 }
-                self.tableView.reloadData()
             }
             
             self.postsRef.observeEventType(FIRDataEventType.ChildRemoved) { (snapshot: FIRDataSnapshot) -> Void in
@@ -67,15 +78,15 @@ class PostsViewController: UITableViewController {
                 let removedPost = Post(snapshot: snapshot)
                 
                 var indexToRemove: Int!
-                for post in self.posts {
+                for (i,post) in self.posts.enumerate() {
                     if post.key == removedPost.key {
                         indexToRemove = self.posts.indexOf(post)!
                         self.posts.removeAtIndex(indexToRemove)
+                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
+                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
                         break
                     }
                 }
-                
-                self.tableView.reloadData()
             }
             
             self.postsRef.observeEventType(FIRDataEventType.ChildChanged) { (snapshot: FIRDataSnapshot) -> Void in
@@ -83,14 +94,14 @@ class PostsViewController: UITableViewController {
                     return
                 }
                 let changedPost = Post(snapshot: snapshot)
-                for post in self.posts {
+                for (i,post) in self.posts.enumerate() {
                     if post.key == changedPost.key {
                         post.postText = changedPost.postText
                         post.location = changedPost.location
+                        self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: .Automatic)
                         break
                     }
                 }
-                self.tableView.reloadData()
             }
         }
         
@@ -111,7 +122,7 @@ class PostsViewController: UITableViewController {
             if (!snapshots.exists()) {
                 return
             }
-            for (key, value) in snapshots.value as! [String: AnyObject] {
+            for (_, value) in snapshots.value as! [String: AnyObject] {
                 let email = value.valueForKey("email")! as! String
                 let username = value.valueForKey("username")! as! String
                 self.friends.insert(User(email: email, username: username), atIndex: 0)
@@ -125,6 +136,9 @@ class PostsViewController: UITableViewController {
         super.viewWillDisappear(animated)
         self.postsRef.removeAllObservers()
         self.userRef.removeAllObservers()
+    }
+    @IBAction func pressedLogout(sender: AnyObject) {
+        appDelegate.handleLogout()
     }
     
     override func didReceiveMemoryWarning() {
@@ -141,7 +155,6 @@ class PostsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(self.posts.count)
         return self.posts.count
     }
 
@@ -155,7 +168,7 @@ class PostsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80;
+        return 150;
     }
     
     /*
@@ -198,15 +211,27 @@ class PostsViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == postsToSaves {
+            let controller = segue.destinationViewController as! SavesViewController
+            controller.user = self.user
+        }
         if segue.identifier == postToFriends {
             let controller = segue.destinationViewController as! FriendsTableViewController
-            controller.userInfo = self.userInfo
-            print(self.userInfo?.email!)
+            controller.user = self.user
         }
         if segue.identifier == postIdentifier {
             let controller = segue.destinationViewController as! PostViewController
             controller.postRef = FIRDatabase.database().reference().child("posts")
-            controller.email = self.userInfo?.email
+            controller.user = self.user
+        }
+        if segue.identifier == showPostDetail {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let post = self.posts[indexPath.row]
+                let controller = segue.destinationViewController as! PostDetailViewController
+                controller.postRef = self.postsRef.child(post.key)
+                controller.currentUserRef = self.userRef
+                controller.user = self.user
+            }
         }
     }
     

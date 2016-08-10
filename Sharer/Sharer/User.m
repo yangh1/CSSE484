@@ -13,7 +13,8 @@
 - (id) initWithUserInfo: (FIRUser*) userInfo
                Username: (NSString*) username {
     self = [self init];
-    self.userInfo = userInfo;
+    self.email = userInfo.email;
+    self.key = userInfo.uid;
     self.username = username;
     self.ref = [[FIRDatabase database] reference];
     return self;
@@ -60,10 +61,11 @@
 }
 
 - (void) registerUserInfo {
-    NSDictionary *newUser = @{@"email": self.userInfo.email,
+    NSDictionary *newUser = @{@"email": self.email,
                            @"username": self.username};
-    [[[_ref child:@"users"] child:self.userInfo.uid] setValue: newUser];
+    [[[_ref child:@"users"] child:self.key] setValue: newUser];
     [[[_ref child:@"usersInfo"] childByAutoId] setValue: newUser];
+    [[[[[_ref child:@"users"] child:self.key] child:@"friends"] childByAutoId] setValue: @{@"email": self.email,@"username": self.username}];
 }
 
 
