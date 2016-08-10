@@ -134,10 +134,15 @@ class PostDetailViewController: UIViewController{
         let deletePost = UIAlertAction(title: "Deleted", style:UIAlertActionStyle.Destructive) { (UIAlertAction) -> Void in
             self.postRef.removeValue()
             self.navigationController?.popViewControllerAnimated(true)
+            
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style:UIAlertActionStyle.Cancel) { (UIAlertAction) -> Void in
         }
 
         ac.addAction(savePost)
         ac.addAction(deletePost)
+        ac.addAction(cancel)
         presentViewController(ac, animated: true, completion: nil)
     }
 

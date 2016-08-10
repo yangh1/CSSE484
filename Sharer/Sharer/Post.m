@@ -31,7 +31,6 @@
     self.postText = snapshot.value[@"postText"];
     self.location = snapshot.value[@"location"];
     self.images = snapshot.value[@"images"];
-    NSLog(@"1111111%@",snapshot.value);
     return self;
 }
 

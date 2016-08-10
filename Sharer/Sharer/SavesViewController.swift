@@ -28,8 +28,10 @@ class SavesViewController: UITableViewController {
             let save = Save(snapshot: snapshot)
             
             
-            self.postsRef.queryOrderedByKey().queryEqualToValue(save.postKey).observeEventType(FIRDataEventType.ChildAdded, withBlock: { (snapshot:FIRDataSnapshot) in
+            self.postsRef.child(save.postKey).observeEventType(FIRDataEventType.Value, withBlock: { (snapshot:FIRDataSnapshot) in
                 if !snapshot.exists() || save.postKey != snapshot.key {
+                    print(12345)
+                    self.userRef.child("saves").child(save.key).removeValue()
                     return;
                 }
                 
@@ -39,21 +41,21 @@ class SavesViewController: UITableViewController {
                 self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             })
             
-            self.postsRef.queryOrderedByKey().queryEqualToValue(save.postKey).observeEventType(FIRDataEventType.ChildRemoved, withBlock: { (snapshot:FIRDataSnapshot) in
-                if !snapshot.exists() || save.postKey != snapshot.key {
-                    return;
-                }
-                
-                let deletedSave = Post(snapshot: snapshot)
-                for (i, save) in self.saves.enumerate() {
-                    if deletedSave.key == save.key {
-                        self.saves.removeAtIndex(i)
-                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
-                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                        break
-                    }
-                }
-            })
+//            self.postsRef.child(save.postKey).observeEventType(FIRDataEventType.ChildRemoved, withBlock: { (snapshot:FIRDataSnapshot) in
+//                if !snapshot.exists() || save.postKey != snapshot.key {
+//                    return;
+//                }
+//                print(snapshot)
+//                let deletedSave = Post(snapshot: snapshot)
+//                for (i, save) in self.saves.enumerate() {
+//                    if deletedSave.key == save.key {
+//                        self.saves.removeAtIndex(i)
+//                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
+//                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//                        break
+//                    }
+//                }
+//            })
             
 //            self.postsRef.queryOrderedByKey().queryEqualToValue(save.postKey).observeEventType(FIRDataEventType.ChildRemoved, withBlock: { (snapshot:FIRDataSnapshot) in
 //                let deletedSave = Post(snapshot: snapshot)

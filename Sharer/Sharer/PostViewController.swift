@@ -168,7 +168,6 @@ class PostViewController: UIViewController, UITextFieldDelegate, CLLocationManag
                 self.address = ""
                 
                 for c in address.characters {
-                    print(c)
                     if  c != Character("\n") {
                         self.address.append(c)
                     } else {
@@ -229,7 +228,6 @@ class PostViewController: UIViewController, UITextFieldDelegate, CLLocationManag
                     self.postRef.child(self.post.key).child("images").childByAutoId().setValue(metadata?.downloadURL()?.description)
                     print(metadata?.downloadURL())
                 })
-                print(count)
             }
             count += 1
         }
