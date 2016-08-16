@@ -40,34 +40,7 @@ class SavesViewController: UITableViewController {
                 let newIndexPath = NSIndexPath(forRow: 0, inSection: 0)
                 self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             })
-            
-//            self.postsRef.child(save.postKey).observeEventType(FIRDataEventType.ChildRemoved, withBlock: { (snapshot:FIRDataSnapshot) in
-//                if !snapshot.exists() || save.postKey != snapshot.key {
-//                    return;
-//                }
-//                print(snapshot)
-//                let deletedSave = Post(snapshot: snapshot)
-//                for (i, save) in self.saves.enumerate() {
-//                    if deletedSave.key == save.key {
-//                        self.saves.removeAtIndex(i)
-//                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
-//                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-//                        break
-//                    }
-//                }
-//            })
-            
-//            self.postsRef.queryOrderedByKey().queryEqualToValue(save.postKey).observeEventType(FIRDataEventType.ChildRemoved, withBlock: { (snapshot:FIRDataSnapshot) in
-//                let deletedSave = Post(snapshot: snapshot)
-//                for (i, save) in self.saves.enumerate() {
-//                    if deletedSave.key == save.key {
-//                        self.saves.removeAtIndex(i)
-//                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
-//                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-//                        break
-//                    }
-//                }
-//            })
+
         }
         
         self.userRef.child("saves").observeEventType(FIRDataEventType.ChildRemoved) { (snapshot: FIRDataSnapshot) in
@@ -84,25 +57,6 @@ class SavesViewController: UITableViewController {
         }
 
     }
-    
-//    func savesObserve(save: Save) {
-//        do {
-//            try catchException {
-//                self.postsRef.observeEventType(FIRDataEventType.ChildAdded, withBlock: { (snapshot:FIRDataSnapshot) in
-//                    if !snapshot.exists() || save.postKey != snapshot.key {
-//                        return;
-//                    }
-//                    
-//                    let post = Post(snapshot: snapshot)
-//                    self.saves.insert(post, atIndex: 0)
-//                    let newIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-//                    self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-//                })
-//            }
-//        } catch let error {
-//            print(error)
-//        }
-//    }
     
     override func viewDidDisappear(animated: Bool) {
         self.postsRef.removeAllObservers()
@@ -141,42 +95,7 @@ class SavesViewController: UITableViewController {
     @IBAction func pressedLogout(sender: AnyObject) {
         appDelegate.handleLogout()
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -53,6 +53,12 @@ class PostDetailViewController: UIViewController{
 
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.currentUserRef.removeAllObservers()
+        self.postRef.removeAllObservers()
+    }
+    
     func checkSave(key: String) -> Save? {
         for save in saves {
             if save.postKey == key {
@@ -88,7 +94,7 @@ class PostDetailViewController: UIViewController{
     
         self.title = post?.username
         
-        postTextView.text = post!.postText
+        postTextView.text = "\(post!.postText)\n\nI am in \(post!.location)"
         let contentSize = postTextView.sizeThatFits(postTextView.bounds.size)
 
         
@@ -189,19 +195,14 @@ class PostDetailViewController: UIViewController{
 
     @IBAction func pressedGo(sender: AnyObject) {
         
-        var location = ""
+        let location = "http://maps.apple.com/?address=\(self.post!.location!)"
         
-        for c in (self.post?.location.characters)! {
-            if c == " " {
-                location.append(Character("%"))
-                location.append(Character("2"))
-                location.append(Character("0"))
-            } else {
-                location.append(c)
-            }
+        if let encodedLocation = location.stringByAddingPercentEncodingWithAllowedCharacters(
+            NSCharacterSet.URLFragmentAllowedCharacterSet()),
+            url = NSURL(string: encodedLocation) {
+            print(url)
+            UIApplication.sharedApplication().openURL(url)
         }
-        
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?address=\(location)")!)
 
     }
     /*

@@ -32,12 +32,7 @@ class PostViewController: UIViewController, UITextFieldDelegate, CLLocationManag
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!).observeEventType(FIRDataEventType.Value) { (snapshot:FIRDataSnapshot) in
-//            print(snapshot)
-//            self.user = User(snapshot: snapshot)
-//        }
-        
+
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PostViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         

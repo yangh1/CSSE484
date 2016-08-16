@@ -13,6 +13,7 @@
 		12144D641D59B442003959A8 /* SavesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12144D631D59B442003959A8 /* SavesViewController.swift */; };
 		12144D661D59CF80003959A8 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12144D651D59CF80003959A8 /* PostDetailViewController.swift */; };
 		12144D691D5A0741003959A8 /* Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 12144D681D5A0741003959A8 /* Save.m */; };
+		12144D931D61E420003959A8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12144D921D61E420003959A8 /* RegisterViewController.swift */; };
 		12893D5E1D3082870040A100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12893D5D1D3082870040A100 /* AppDelegate.swift */; };
 		12893D611D3082870040A100 /* Sharer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12893D5F1D3082870040A100 /* Sharer.xcdatamodeld */; };
 		12893D681D3082870040A100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12893D661D3082870040A100 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		12144D651D59CF80003959A8 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		12144D671D5A0741003959A8 /* Save.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Save.h; sourceTree = "<group>"; };
 		12144D681D5A0741003959A8 /* Save.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Save.m; sourceTree = "<group>"; };
+		12144D921D61E420003959A8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		12893D5A1D3082870040A100 /* Sharer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sharer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12893D5D1D3082870040A100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12893D601D3082870040A100 /* Sharer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sharer.xcdatamodel; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				12AAAD541D58E0F50023AE4B /* LoginViewController.swift */,
 				12144D631D59B442003959A8 /* SavesViewController.swift */,
 				12144D651D59CF80003959A8 /* PostDetailViewController.swift */,
+				12144D921D61E420003959A8 /* RegisterViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				12AB1CCE1D3F40A40099303E /* User.m in Sources */,
 				12893D5E1D3082870040A100 /* AppDelegate.swift in Sources */,
 				121129C01D51E7EE0082A455 /* PostTableViewCell.swift in Sources */,
+				12144D931D61E420003959A8 /* RegisterViewController.swift in Sources */,
 				12AB1CCA1D3F3CD50099303E /* FriendsTableViewController.swift in Sources */,
 				12AAAD551D58E0F50023AE4B /* LoginViewController.swift in Sources */,
 			);

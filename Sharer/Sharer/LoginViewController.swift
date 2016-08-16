@@ -20,6 +20,8 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
     @IBOutlet weak var rosefireLoginButton: RaisedButton!
     @IBOutlet weak var googleLoginButton: GIDSignInButton!
     
+    var container: UIView = UIView()
+    
     let ROSEFIRE_REGISTRY_TOKEN = "573eecd6-1faf-4edc-97b3-6073b5fb7890"
     
     override func viewDidLoad() {
@@ -76,6 +78,7 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
     }
 
     func loginCompletionCallback(user: FIRUser?, error: NSError?) {
+        self.container.removeFromSuperview()
         if error == nil {
             self.appDelegate.handleLogin()
         } else {
@@ -91,51 +94,28 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
     
     
     func handleEmailPasswordSignUp() {
-        
-        let alertController = UIAlertController(title: "Enter Your Username", message: "", preferredStyle: .Alert)
-        
-        alertController.addTextFieldWithConfigurationHandler {
-            (textField) -> Void in
-            textField.placeholder = "Username for your account"
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
-            (action) -> Void in
-            print("Pressed Cancel")
-        }
-        
-        let createAction = UIAlertAction(title: "Create", style: UIAlertActionStyle.Default) {
-            (action) -> Void in
-            let usernameTextField = alertController.textFields![0]
-            FIRAuth.auth()?.createUserWithEmail(self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
-                if error != nil {
-                    let alertController = UIAlertController(title: "Login failed", message: error?.localizedDescription, preferredStyle: .Alert)
-                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-                    alertController.addAction(okAction)
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                    
-                    print(error?.localizedDescription)
-                    print(error?.description)
-                    return
-                }
-                let newUser = User(userInfo: user, username: usernameTextField.text!)
-                newUser.registerUserInfo()
-                self.appDelegate.handleLogin()
-            }
-        }
-        
-        alertController.addAction(cancelAction)
-        alertController.addAction(createAction)
-        presentViewController(alertController, animated: true, completion: nil)
-
+        self.performSegueWithIdentifier("RegisterSegue", sender: nil)
     }
     
     
     func handleEmailPasswordLogin() {
+        container.frame = self.view.frame
+        container.center = self.view.center
+        container.backgroundColor = UIColor(white: 0xffffff, alpha: 0.3)
+        
+        self.view.addSubview(container)
+        
+        let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        myActivityIndicator.center = view.center
+        myActivityIndicator.startAnimating()
+        container.addSubview(myActivityIndicator)
+
         FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: loginCompletionCallback)
     }
 
     @IBAction func rosefireLogin(sender: AnyObject) {
+    
+        
         Rosefire.sharedDelegate().uiDelegate = self
         Rosefire.sharedDelegate().signIn(self.ROSEFIRE_REGISTRY_TOKEN) { (error: NSError!, result: RosefireResult!) in
             
@@ -143,7 +123,16 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
                 print("Error communicating with Rosefire")
                 return
             }
+            self.container.frame = self.view.frame
+            self.container.center = self.view.center
+            self.container.backgroundColor = UIColor(white: 0xffffff, alpha: 0.3)
             
+            self.view.addSubview(self.container)
+            
+            let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+            myActivityIndicator.center = self.view.center
+            myActivityIndicator.startAnimating()
+            self.container.addSubview(myActivityIndicator)
            
             
             FIRAuth.auth()?.signInWithCustomToken(result.token, completion: { (user: FIRUser?, error: NSError?) in
@@ -160,14 +149,15 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
                         let newUser = User(email: result.email, username: result.name, key: user?.uid)
                         newUser.registerUserInfo()
                     }
+                    self.container.removeFromSuperview()
+                    self.appDelegate.handleLogin()
                 })
-                self.appDelegate.handleLogin()
 
             })
         }
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

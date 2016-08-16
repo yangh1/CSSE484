@@ -18,20 +18,6 @@ class FriendsTableViewController: UITableViewController {
     var friendsRefHandle : FIRDatabaseHandle?
     var friendsRef: FIRDatabaseReference?
     var userInfoRef: FIRDatabaseReference?
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        // Uncomment the following line to preserve selection between presentations
-//        // self.clearsSelectionOnViewWillAppear = false
-//
-//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-////        FIRDatabase.database().reference().child("users").child((FIRAuth.auth()?.currentUser?.uid)!).observeEventType(FIRDataEventType.Value, withBlock: { (snapshot: FIRDataSnapshot) -> Void in
-////            let user = User(snapshot: snapshot)
-////            self.user = user
-////        })
-//    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -163,11 +149,6 @@ class FriendsTableViewController: UITableViewController {
         appDelegate.handleLogout()
     }
     // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

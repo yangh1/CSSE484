@@ -114,9 +114,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     
                     newUser.registerUserInfo()
                 }
+                self.handleLogin()
             })
 
-            self.handleLogin()
+           
         })
     }
 
